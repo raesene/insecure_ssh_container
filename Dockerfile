@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-RUN apt update && apt install -y openssh-server dnsutils iputils-ping vim nano 
+RUN apt update && apt install -y openssh-server dnsutils iputils-ping vim nano curl git 
 
 
 RUN groupadd -g 999 sshuser && useradd -r -u 999 -g sshuser sshuser
