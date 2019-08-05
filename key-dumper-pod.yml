@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: keydumper-pod
+  labels:
+    app: keydumper
+spec:
+  containers:
+  - name: keydumper-pod
+    image: busybox
+    volumeMounts:
+    - mountPath: /pki
+      name: keyvolume
+    command: ['cat', '/pki/ca.key']
+  volumes:
+  - name: keyvolume
+    hostPath:
+      path: /etc/kubernetes/pki
+      type: Directory

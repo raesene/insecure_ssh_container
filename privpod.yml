@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privpod
+  labels:
+spec:
+  containers:
+  - name: privpod
+    image: raesene/alpine-containertools
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - mountPath: /node
+      name: noderoot
+  volumes:
+  - name: noderoot
+    hostPath:
+      path: /
