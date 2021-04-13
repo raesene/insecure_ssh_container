@@ -12,6 +12,7 @@ RUN chmod +x entrypoint.sh
 COPY noderoot.yml /
 COPY key-dumper-pod.yml /
 COPY privpod.yml /
+COPY ncat-reverse-shell-pod.yml /
  
 # This is a Dumb Hack
 CMD ["/entrypoint.sh"]
